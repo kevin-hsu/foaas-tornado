@@ -11,10 +11,11 @@ define("port", default=8000)
 class ApiApplication(tornado.web.Application):
     def __init__(self):
         handlers = [
-            (r"/you", YouHandler),
+            (r"/", BaseHandler),
+			(r"/you", YouHandler),
 			(r"/off", OffHandler),
 			(r"/everything", EverythingHandler),
-			(r"/custom/([^/]+)", GenericHandler)
+			(r"/custom", GenericHandler)
 		]
         
         tornado.web.Application.__init__(self, handlers, debug=True)
