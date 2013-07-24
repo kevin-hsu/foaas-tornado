@@ -3,7 +3,7 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 
-from api.TestHandler import *
+from api.FuckHandler import *
 
 from tornado.options import define, options
 define("port", default=8000)
@@ -11,8 +11,11 @@ define("port", default=8000)
 class ApiApplication(tornado.web.Application):
     def __init__(self):
         handlers = [
-            (r"/test", TestHandler)
-        ]
+            (r"/you", YouHandler),
+			(r"/off", OffHandler),
+			(r"/everything", EverythingHandler),
+			(r"/custom/([^/]+)", GenericHandler)
+		]
         
         tornado.web.Application.__init__(self, handlers, debug=True)
 
