@@ -20,7 +20,7 @@ class TestHandler(tornado.web.RequestHandler):
 	if len(qs_args) == 0:
 		self.write('empty query string')
 	else:
-		self.write(query)
+		self.write(qs_args)
 
 
     def post(self):
