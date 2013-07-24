@@ -11,7 +11,7 @@ class YouHandler(tornado.web.RequestHandler):
 		keys = qs_args.keys()
 		print 'to' in keys
 		if ('to' in keys):
-			self.write('<h2>Fuck you %s.</h2>' % qs_args['to'][0])
+			self.write('<h2>Fuck you, %s.</h2>' % qs_args['to'][0])
 			if ('from' in keys):
 				self.write('<br> - From <i>%s</i>' % qs_args['from'][0])
 			else:
@@ -24,7 +24,7 @@ class OffHandler(tornado.web.RequestHandler):
 		keys = qs_args.keys()
 		print 'to' in keys
 		if ('to' in keys):
-			self.write('<h2>Fuck off %s.</h2>' % qs_args['to'][0])
+			self.write('<h2>Fuck off, %s.</h2>' % qs_args['to'][0])
 			if ('from' in keys):
 				self.write('<br> - From <i>%s</i>' % qs_args['from'][0])
 			else:
